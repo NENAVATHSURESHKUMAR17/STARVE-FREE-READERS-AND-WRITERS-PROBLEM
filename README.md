@@ -14,7 +14,7 @@ Here we are not allowed two or more writer to write in the same memory location 
 2. semaphore  `"cs_mutex"` is used to maintain mutual exlusion between reader-writers and writer-writer.
 3. semphore ``"readcount_mutex"`` is used for updation od read_count to not to go for a race condition.
 ```
-
+C++
 //Intialise the read_count
 long long int read_count=0;
 // Initialising semaphores
@@ -46,7 +46,7 @@ struct Semaphore{
 ``` 
 
 # Pseudo code for Reader 
-```
+```C++
 Readers(){
     .
     ..
@@ -77,7 +77,7 @@ Readers(){
        } 
   ```     
 # Pseudocode for Writer
-```
+```C++
 Writer(){
     
     .
