@@ -72,7 +72,7 @@ Readers(){
      ..
      .
        } 
-       
+  ```     
 # Pseudocode for Writer
 ```
 Writer(){
