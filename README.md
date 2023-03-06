@@ -1,6 +1,6 @@
 # STARVE-FREE-READERS-AND-WRITERS-PROBLEM
 # Problem Description
-The readers and writers problem is a  synchronization problem where reading an dwriting done at the same location. Readers tries to read and riter tries to write in the same memory location or common resource.In First Readers-Writer problem Writer starve and Second Readers and writer problem Reader strave .Write Pseudo code for starve free  solutions using semaphores.
+>The readers and writers problem is a  synchronization problem where reading an dwriting done at the same location. Readers tries to read and riter tries to write in the same memory location or common resource.In First Readers-Writer problem Writer starve and Second Readers and writer problem Reader strave .Write Pseudo code for starve free  solutions using semaphores.
 # Proposed solution (INTUITION)
 Here I allocate the shared resources to Reader or Writer based on First Come First Serve basis.If the resources are already been allocated to some one then we block the process .To maintain the order of the process in the waiting list we maintain a Queue(FIFO-QUEUE) .We have the constraint of mutual exclusion is that writer and reader cannot share the common resources simultaneously so as th handle this I used “cs_mutex” semaphore.
 ### **During reading:**
