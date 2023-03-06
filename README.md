@@ -52,11 +52,13 @@ Readers(){
     ..
     ...
     
-    wait(execute);                   // This sempahore waits in this step till it turn get for execution from the FIFO QUEUE(pop(process));
-    wait(readcount_mutex);read_count++;//This semaphore lock the access of read_count to update the read value one at a time 
-    if(read_count==1) wait(cs_mutex);  // This is to take the shared resources by the first reader from  the consequtive readers 
-    signal(readcount_mutex);         // Here we release the  read_count  access to future updation
-    signal(execute);               // we signal the next process in queue for their execution turn it may be areader or the writer
+    wait(execute);                    // This sempahore waits in this step till it turn get for execution from the FIFO QUEUE(pop(process));
+    wait(readcount_mutex);
+    read_count++;                     //This semaphore lock the access of read_count to update the read value one at a time 
+    if(read_count==1) 
+    wait(cs_mutex);                   // This is to take the shared resources by the first reader from  the consequtive readers 
+    signal(readcount_mutex);          // Here we release the  read_count  access to future updation
+    signal(execute);                  // we signal the next process in queue for their execution turn it may be areader or the writer
     
        ....
        
@@ -64,10 +66,11 @@ Readers(){
        
        ....
        
-       wait(readcount_mutex);       //This semaphore lock the access of read_count to update the read value one at a time 
+       wait(readcount_mutex);                 //This semaphore lock the access of read_count to update the read value one at a time 
        read_count--;
-       if(read_count==0)  signal(cs_mutex);   // Here  after all the execution of consequtive readers we release the acccess of (CS) or shared resources to tyhe writer in their turn 
-       signal(readcount_mutex);     // Here we release the  read_count  access to future updation
+       if(read_count==0)  
+       signal(cs_mutex);                     // Here  after all the execution of consequtive readers we release the acccess of (CS) or shared resources to tyhe                                                       writer in their turn 
+       signal(readcount_mutex);              // Here we release the  read_count  access to future updation
      ...
      ..
      .
@@ -82,7 +85,7 @@ Writer(){
     ...
        
     wait(execute);                   // This sempahore waits in this step till it turn get for execution from the FIFO QUEUE(pop(process));
-    wait(cs_mutex);                //Here writer locks the access of shared resources for readers and other writers too. 
+    wait(cs_mutex);                  //Here writer locks the access of shared resources for readers and other writers too. 
      
      .....
      
@@ -90,8 +93,8 @@ Writer(){
      
      .....
      
-     signal(cs_mutex);           //Here we release the shared resources by the writers for the next process
-     signal(execute);           //we are giving signal for the next process from the FIFO QUEUE to be exceuted next
+     signal(cs_mutex);               //Here we release the shared resources by the writers for the next process
+     signal(execute);                //we are giving signal for the next process from the FIFO QUEUE to be exceuted next
     
     ...
     ..
