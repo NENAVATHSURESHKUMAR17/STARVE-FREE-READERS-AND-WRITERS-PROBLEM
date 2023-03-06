@@ -99,5 +99,5 @@ Writer(){
 } ```
 
 # Conclusion
-**`Mutual Exclusion` :** I used semaphore named “cs_mutex” which allow either writer or reader to process simultaneously in the critical section, which implies reader and writer are mutually excluded
+`Mutual Exclusion` :I used semaphore named “cs_mutex” which allow either writer or reader to process simultaneously in the critical section, which implies reader and writer are mutually excluded
 
