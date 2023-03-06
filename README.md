@@ -13,8 +13,9 @@ Here we are not allowed two or more writer to write in the same memory location 
 1. semphore `"execute"` is for the process to execute in the order of arrival and i used this semaphore to signal other process to start after its execution.
 2. semaphore  `"cs_mutex"` is used to maintain mutual exlusion between reader-writers and writer-writer.
 3. semphore ``"readcount_mutex"`` is used for updation od read_count to not to go for a race condition.
+
 ```
-C++
+    C++
 //Intialise the read_count
 long long int read_count=0;
 // Initialising semaphores
