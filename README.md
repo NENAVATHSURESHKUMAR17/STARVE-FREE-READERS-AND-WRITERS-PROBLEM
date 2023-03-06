@@ -104,7 +104,7 @@ Writer(){
 
 
 # Conclusion
-`Mutual Exclusion` :I used semaphore named “cs_mutex” which allow either writer or reader to process simultaneously in the critical section, which implies reader and writer are mutually excluded
-`Bounded waiting` :Here each process will get a chance of progress at some time because of FIFO queue order implementation not the priority.
-`Deadlock` : Here there will be no chance of deadlock as it have no cyclic requests ,mutually excluded etc.
-`Starve free` : I applied FIFO QUEUE which executes the process as in the order of arrival .Each process run in a finite time and exits from the critical section .Here every process will get chance without starvation
+`Mutual Exclusion` :I used semaphore named “cs_mutex” which allow either writer or reader to process simultaneously in the critical section, which implies reader and writer are mutually excluded.<br>
+`Bounded waiting` :Here each process will get a chance of progress at some time because of FIFO queue order implementation not the priority.<br>
+`Deadlock` : Here there will be no chance of deadlock as it have no cyclic requests ,mutually excluded,Bounded waiting etc.<br>
+`Starve free` : I applied FIFO QUEUE which executes the process as in the order of arrival .Each process run in a finite time and exits from the critical section .Here every process will get chance without starvation.<br>
